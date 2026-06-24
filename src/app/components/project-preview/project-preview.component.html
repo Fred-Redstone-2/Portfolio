@@ -2,29 +2,25 @@
   href="{{ project().url }}"
   target="_blank"
   rel="noopener noreferrer"
-  class="block h-full card-base card-hover"
+  class="h-full flex flex-col items-center card-hover"
 >
   <!-- Image -->
-  <div class="mb-4">
-    <img src="{{ project().preview }}" alt="Image de {{ project().name }}" class="rounded-2xl" />
-  </div>
+  <img
+    src="{{ project().preview }}"
+    alt="Image de {{ project().name }}"
+    class="h-50 object-scale-down rounded-2xl mb-4"
+  />
 
   <!-- Contenu -->
   <div>
-    <h1 class="text-2xl font-bold text-b">
+    <h1 class="text-2xl text-section-title font-bold">
       {{ project().name }}
     </h1>
-    <p class="text-gray-600 mt-3 text-base leading-relaxed">
+    <p class="mt-3 text-base text-secondary leading-relaxed">
       {{ project().description }}
     </p>
   </div>
 
   <!-- Technologies -->
-  <div class="flex flex-wrap gap-2 mt-4">
-    @for (tech of project().techs; track tech) {
-      <span class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full font-medium">
-        {{ tech }}
-      </span>
-    }
-  </div>
+  <app-pill-list [values]="project().techs" class="self-baseline" />
 </a>

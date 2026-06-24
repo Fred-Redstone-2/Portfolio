@@ -21,7 +21,7 @@ export const PROJECT_LIST: ProjectDetails[] = [
   },
   {
     name: 'SmartSounds (Séquences sonores)',
-    description: 'Une application Python permettant de générer des partitions de musique selon des paramètres prédéfinis.',
+    description: 'Une application permettant de générer des partitions de musique selon des paramètres prédéfinis.',
     preview: './assets/SmartSounds.png',
     url: 'https://github.com/Fred-Redstone-2/SmartSounds',
     techs: [
