@@ -15,6 +15,12 @@
   --color-footer-bg: #1d293d;
   --color-pill-bg: #f3f4f6;
 
+  --color-top-bg-init: #f6339a;
+  --color-top-bg-mid: oklch(62.7% 0.265 303.9);
+  --color-top-bg-end: oklch(71.5% 0.143 215.221);
+  --color-bottom-bg-init: #6a7282;
+  --color-bottom-bg-end: #4a5565;
+
   --animate-gradient-slow: gradient-move 12s ease infinite;
 
   /* Keyframes de l'animation */
