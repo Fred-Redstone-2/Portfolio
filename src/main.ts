@@ -1,7 +1,24 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { App } from './app/app';
+import { enableProdMode, enableProfiling, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { provideRouter, Routes, withHashLocation } from '@angular/router';
+import { environment } from './environments/environment';
 
-bootstrapApplication(App, appConfig)
+import { AppComponent } from '@app/pages/app/app.component';
+import { MainPageComponent } from '@app/pages/main-page/main-page.component';
+
+
+if (environment.production) {
+  enableProdMode();
+}
+
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: MainPageComponent },
+];
+
+enableProfiling();
+bootstrapApplication(AppComponent, {
+  providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes, withHashLocation())],
+})
   // eslint-disable-next-line no-console
   .catch((err) => console.error(err));
