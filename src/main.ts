@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: MainPageComponent },
   { path: 'cv', component: CvPageComponent },
+  { path: '**', redirectTo: '/home' },
 ];
 
 enableProfiling();

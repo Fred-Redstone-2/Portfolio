@@ -1,13 +1,13 @@
-<!-- Déjà considéré comme une flexbox, voir le .ts -->
+<!-- Prend tout l'espace disponible, voir le .ts -->
 <div
-  class="w-full h-full text-center text-white bg-linear-to-br from-pink-500 via-purple-500 to-cyan-500 bg-size-[400%_400%] animate-gradient-slow"
+  class="w-full h-full flex flex-col items-center text-white bg-linear-to-br from-pink-500 via-purple-500 to-cyan-500 bg-size-[400%_400%] animate-gradient-slow"
 >
   <h1 class="text-5xl font-black tracking-tight pt-20">Frédéric Mac Conaill</h1>
   <p class="mt-4 text-xl opacity-90">Un étudiant en génie logiciel à Polytechnique Montréal;</p>
   <p class="text-xl opacity-90">
     passionné de jeux vidéos, de programmation et de conception de logiciels.
   </p>
-  <img src="" alt="Photo" class="mt-4 mb-8" />
+  <img src="./assets/Photo.jpg" alt="Photo" class="mt-4 mb-8 h-90 object-scale-down rounded-2xl" />
 </div>
 
 <app-project-list class="flex-1 flex flex-col" />

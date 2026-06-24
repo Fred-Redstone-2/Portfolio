@@ -6,6 +6,9 @@
   /* This overrides Tailwind's default font-sans */
   --font-sans: 'Helvetica', ui-sans-serif, system-ui, sans-serif;
 
+  --color-title-blue: #1e3a8a;
+  --color-text-gray: #4a5565;
+
   --animate-gradient-slow: gradient-move 12s ease infinite;
 
   /* Keyframes de l'animation */
@@ -22,6 +25,18 @@
   }
 }
 
+@utility card-base {
+  @apply p-6 bg-white rounded-xl shadow-[0_4px_10px_rgba(0,0,0,0.1)]
+}
+
+@utility card-hover {
+  @apply transition duration-300;
+
+  &:hover {
+    @apply -translate-y-1.5 shadow-[0_10px_24px_rgba(0,0,0,0.15)];
+  }
+}
+
 @layer base {
   html,
   body {
@@ -29,11 +44,5 @@
     padding: 0;
     height: 100%;
     font-family: var(--font-sans);
-  }
-}
-
-@layer components {
-  .card {
-    @apply p-6 bg-white rounded-xl shadow-[0_4px_10px_rgba(0,0,0,0.1)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_24px_rgba(0,0,0,0.15)];
   }
 }
