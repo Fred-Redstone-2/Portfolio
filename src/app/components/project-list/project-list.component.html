@@ -1,0 +1,25 @@
+<div
+  class="flex-1 bg-linear-to-br from-gray-500 to-gray-600 bg-size-[400%_400%] animate-gradient-slow"
+>
+  <div class="ml-40 mr-40 mt-10 mb-10 flex flex-col gap-8">
+    <div
+      class="card hover:cursor-pointer"
+      routerLink="/cv"
+    >
+      <h1 class="text-2xl font-bold text-b">À propos de moi | CV</h1>
+      <p class="text-gray-600 mt-3 text-base leading-relaxed">
+        Apprenez-en davantage sur moi, ma formation, mes expériences et mes intérêts.
+      </p>
+    </div>
+    <div
+      class="grid gap-8"
+      [class.grid-cols-1]="nbColumns() === 1"
+      [class.grid-cols-2]="nbColumns() === 2"
+      [class.grid-cols-3]="nbColumns() === 3"
+    >
+      @for (project of projectList(); track project.name; let i = $index) {
+        <app-project-preview [project]="project" />
+      }
+    </div>
+  </div>
+</div>

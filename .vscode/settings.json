@@ -1,28 +1,33 @@
 {
-    "editor.defaultFormatter": "vscode.typescript-language-features",
-    "editor.formatOnSave": true,
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit",
-        "source.fixAll.eslint": "explicit"
-    },
-    "html.format.indentInnerHtml": true,
-    "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[scss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    }
+  "editor.defaultFormatter": "vscode.typescript-language-features",
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "html.format.indentInnerHtml": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "cSpell.words": [
+    "Conaill",
+    "tailwindcss"
+  ],
 }

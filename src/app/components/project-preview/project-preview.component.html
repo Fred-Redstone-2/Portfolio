@@ -1,0 +1,30 @@
+<a
+  href="{{ project().url }}"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="block h-full card"
+>
+  <!-- Image -->
+  <div class="mb-4">
+    <img src="{{ project().preview }}" alt="Image de {{ project().name }}" />
+  </div>
+
+  <!-- Contenu -->
+  <div>
+    <h1 class="text-2xl font-bold text-b">
+      {{ project().name }}
+    </h1>
+    <p class="text-gray-600 mt-3 text-base leading-relaxed">
+      {{ project().description }}
+    </p>
+  </div>
+
+  <!-- Technologies -->
+  <div class="flex flex-wrap gap-2 mt-4">
+    @for (tech of project().techs; track tech) {
+      <span class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full font-medium">
+        {{ tech }}
+      </span>
+    }
+  </div>
+</a>

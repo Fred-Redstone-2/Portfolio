@@ -1,10 +1,11 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { enableProdMode, enableProfiling, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter, Routes, withHashLocation } from '@angular/router';
+import { provideRouter, Routes } from '@angular/router';
 import { environment } from './environments/environment';
 
 import { AppComponent } from '@app/pages/app/app.component';
 import { MainPageComponent } from '@app/pages/main-page/main-page.component';
+import { CvPageComponent } from '@app/pages/cv-page/cv-page.component';
 
 
 if (environment.production) {
@@ -14,11 +15,12 @@ if (environment.production) {
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: MainPageComponent },
+  { path: 'cv', component: CvPageComponent },
 ];
 
 enableProfiling();
 bootstrapApplication(AppComponent, {
-  providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes, withHashLocation())],
+  providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes)],
 })
   // eslint-disable-next-line no-console
   .catch((err) => console.error(err));

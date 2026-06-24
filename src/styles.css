@@ -1,3 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  /* This overrides Tailwind's default font-sans */
+  --font-sans: 'Helvetica', ui-sans-serif, system-ui, sans-serif;
+
+  --animate-gradient-slow: gradient-move 12s ease infinite;
+
+  /* Keyframes de l'animation */
+  @keyframes gradient-move {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .card {
+    @apply p-6 bg-white rounded-xl shadow-[0_4px_10px_rgba(0,0,0,0.1)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_24px_rgba(0,0,0,0.15)];
+  }
+}
