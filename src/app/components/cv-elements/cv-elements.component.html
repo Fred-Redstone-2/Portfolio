@@ -1,0 +1,116 @@
+<app-cv-section sectionTitle="Profil">
+  <p class="flex-1" [innerHTML]="resume().profile | simpleMarkdown"></p>
+</app-cv-section>
+
+<app-cv-section sectionTitle="Compétences techniques">
+  <ul class="flex-1">
+    @for (category of skillsArray(); track category[0]; let i = $index) {
+      @let title = category[0];
+      @let rows = category[1];
+
+      <li [class]="{ 'pb-6': i !== skillsArray().length - 1 }">
+        <h3 class="font-bold text-xl pb-2">
+          {{ title }}
+        </h3>
+        <ul class="list-disc marker:text-secondary pl-6 ml-2">
+          @for (line of rows; track line[0]) {
+            <li>
+              @for (item of line; track item; let j = $index) {
+                <span>{{ item }}</span>
+                @if (j !== line.length - 1) {
+                  <span>, </span>
+                }
+              }
+            </li>
+          }
+        </ul>
+      </li>
+    }
+  </ul>
+</app-cv-section>
+
+<app-cv-section sectionTitle="Formation">
+  <ul class="flex-1">
+    @for (item of resume().education; track item.degree; let i = $index) {
+      <li
+        class="flex flex-row items-start gap-2"
+        [class]="{ 'pb-6': i !== resume().education.length - 1 }"
+      >
+        <span class="flex-none font-bold select-none pt-[0.1rem] pl-2">&mdash;</span>
+        <div class="flex-none flex flex-col gap-1">
+          <h3 class="font-bold text-xl">
+            {{ item.school }}
+          </h3>
+          <p>{{ item.degree }}</p>
+          <em class="italic">{{ item.date }} </em>
+        </div>
+      </li>
+    }
+  </ul>
+</app-cv-section>
+
+<app-cv-section sectionTitle="Expérience">
+  <ul class="flex-1">
+    @for (item of resume().experience; track item.date; let i = $index) {
+      <li class="flex flex-col gap-1" [class]="{ 'pb-6': i !== resume().experience.length - 1 }">
+        <h3 class="font-bold text-xl">
+          {{ item.role }}
+        </h3>
+        <p>
+          <em class="italic">{{ item.company }}</em> | {{ item.date }}
+        </p>
+        <ul class="list-disc marker:text-secondary pl-6 ml-2">
+          @for (task of item.tasks; track task) {
+            <li>{{ task }}</li>
+          }
+        </ul>
+      </li>
+    }
+  </ul>
+</app-cv-section>
+
+<app-cv-section sectionTitle="Langues">
+  <ul class="flex-1">
+    @for (language of resume().languages; track language.name; let i = $index) {
+      <li
+        class="flex flex-row items-start gap-2"
+        [class]="{ 'pb-6': i !== resume().languages.length - 1 }"
+      >
+        <span class="flex-none font-bold select-none pt-[0.1rem] pl-2">&mdash;</span>
+        <div class="flex-none">
+          <h3 class="font-bold text-xl">{{ language.name }}</h3>
+          <p>{{ language.level }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</app-cv-section>
+
+<app-cv-section sectionTitle="Contacts">
+  <ul class="flex-1 flex flex-col gap-1">
+    @for (item of contacts(); track item.display) {
+      <li>
+        <p>
+          <span class="text-xl">
+            <span class="font-bold">{{ item.type }}</span> :
+          </span>
+          <app-url [value]="item.value" [replacementText]="item.display"></app-url>
+        </p>
+      </li>
+    }
+  </ul>
+</app-cv-section>
+
+<app-cv-section sectionTitle="Travaillons ensemble">
+  <div class="flex-1 flex flex-col items-start gap-6">
+    <p class="flex-none" [innerHTML]="endMessage() | simpleMarkdown"></p>
+    <a
+      href="{{ email() }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex-none button hover:underline"
+    >
+      Me contacter
+    </a>
+  </div>
+</app-cv-section>

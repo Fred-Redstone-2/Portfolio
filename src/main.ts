@@ -1,6 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { enableProdMode, enableProfiling, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter, Routes } from '@angular/router';
+import { provideRouter, Routes, withInMemoryScrolling } from '@angular/router';
 import { environment } from './environments/environment';
 
 import { AppComponent } from '@app/pages/app/app.component';
@@ -21,7 +21,12 @@ const routes: Routes = [
 
 enableProfiling();
 bootstrapApplication(AppComponent, {
-  providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes)],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideRouter(routes, withInMemoryScrolling({
+      scrollPositionRestoration: 'enabled',
+    })),
+  ],
 })
   // eslint-disable-next-line no-console
   .catch((err) => console.error(err));

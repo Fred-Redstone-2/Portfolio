@@ -7,20 +7,18 @@
   <!-- Image -->
   <img
     src="{{ project().preview }}"
-    alt="Image de {{ project().name }}"
-    class="h-50 object-scale-down rounded-2xl mb-4"
+    alt="Image de {{ project().title }}"
+    class="flex-none h-50 object-cover rounded-2xl mb-4"
   />
 
   <!-- Contenu -->
-  <div>
+  <div class="flex-none">
     <h1 class="text-2xl text-section-title font-bold">
-      {{ project().name }}
+      {{ project().title }}
     </h1>
-    <p class="mt-3 text-base text-secondary leading-relaxed">
-      {{ project().description }}
-    </p>
+    <p class="mt-3 text-base text-secondary leading-relaxed">{{ project().description }}.</p>
   </div>
 
   <!-- Technologies -->
-  <app-pill-list [values]="project().techs" class="self-baseline" />
+  <app-pill-list [values]="project().techs" class="flex-none self-baseline" />
 </a>

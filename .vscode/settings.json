@@ -11,7 +11,7 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "html.format.indentInnerHtml": true,
   "[jsonc]": {
@@ -38,6 +38,8 @@
   "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
   "cSpell.words": [
     "Conaill",
+    "oklch",
+    "rgba",
     "tailwindcss"
   ],
 }

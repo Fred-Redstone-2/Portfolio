@@ -1,7 +1,8 @@
 import { Component, computed, Signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProjectPreviewComponent } from '@app/components/project-preview/project-preview.component';
-import { PROJECT_LIST, ProjectDetails } from '@app/data-structures/projects';
+import { RESUME } from '@app/data-structures/constants';
+import { ResumeProjectItem } from '@app/data-structures/resume';
 
 const MAX_COLUMNS = 3;
 
@@ -11,7 +12,7 @@ const MAX_COLUMNS = 3;
   templateUrl: './project-list.component.html',
 })
 export class ProjectListComponent {
-  protected readonly projectList: Signal<ProjectDetails[]> = computed(() => PROJECT_LIST);
+  protected readonly projectList: Signal<ResumeProjectItem[]> = computed(() => RESUME.projects);
   private readonly listLength: Signal<number> = computed(() => this.projectList().length);
   protected readonly nbColumns: Signal<number> = computed(() => this.listLength() < MAX_COLUMNS ? this.listLength() : MAX_COLUMNS);
 

@@ -1,1 +1,6 @@
-<p>cv-section works!</p>
+<section class="card-base flex flex-col">
+  <h2 class="flex-auto text-section-title text-3xl font-bold border-b-2 border-b-border pb-2 mt-4 mb-4">
+    <strong class="font-bold">{{ sectionTitle() }}</strong>
+  </h2>
+  <ng-content />
+</section>

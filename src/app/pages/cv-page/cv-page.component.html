@@ -1,11 +1,25 @@
 <app-page-layout>
   <div top class="flex flex-col items-center text-center">
-    <img src="./assets/Photo.jpg" alt="Photo" class="mb-4 h-70 object-scale-down rounded-2xl">
-    <h1 class="text-4xl font-black tracking-tight">Frédéric Mac Conaill</h1>
-    <p class="mt-4 text-base opacity-90">Étudiant en génie logiciel à Polytechnique Montréal</p>
+    <img
+      class="flex-none object-scale-down rounded-2xl mb-4 h-70"
+      src="./assets/Photo.jpg"
+      alt="Photo"
+    />
+    <h1 class="flex-none text-4xl font-black tracking-tight">Frédéric Mac Conaill</h1>
+    <p class="flex-none text-base opacity-90 mt-4">
+      Étudiant en génie logiciel à Polytechnique Montréal
+    </p>
+    <p class="flex-none text-base opacity-90">
+      Développement logiciel <span class=font-bold>&bull;</span> Web interactif
+    </p>
   </div>
 
   <div bottom class="flex-1 flex flex-col">
-    <app-cv-section />
+    <app-cv-elements class="flex-1 flex flex-col text-secondary gap-8" />
   </div>
 </app-page-layout>
+
+<button class="fixed button mt-5 ml-5" (click)="goBack()">
+  <span class="me-2">&larr;</span>
+  <span class="hover:underline">Retour</span>
+</button>

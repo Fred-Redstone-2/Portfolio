@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, InputSignal } from '@angular/core';
 
 @Component({
   selector: 'app-cv-section',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './cv-section.component.html',
 })
 export class CvSectionComponent {
-
+  sectionTitle: InputSignal<string> = input.required<string>();
 }

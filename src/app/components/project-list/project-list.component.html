@@ -1,14 +1,14 @@
-<div class="card-hover hover:cursor-pointer" routerLink="/cv">
+<div class="flex-auto card-hover hover:cursor-pointer" routerLink="/cv">
   <h1 class="text-2xl text-section-title font-bold">À propos de moi | CV</h1>
   <p class="mt-3 text-base text-secondary leading-relaxed">
     Apprenez-en davantage sur moi, ma formation, mes expériences et mes intérêts.
   </p>
 </div>
 <div
-  class="grid gap-8 grid-cols-[repeat(var(--cols),minmax(0,1fr))]"
+  class="flex-auto grid gap-8 grid-cols-[repeat(var(--cols),minmax(0,1fr))]"
   style="--cols: {{ nbColumns() }}"
 >
-  @for (project of projectList(); track project.name; let i = $index) {
+  @for (project of projectList(); track project.title; let i = $index) {
     <app-project-preview [project]="project" />
   }
 </div>

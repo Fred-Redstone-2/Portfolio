@@ -1,6 +1,6 @@
 import { Component, input, InputSignal } from '@angular/core';
 import { PillListComponent } from '@app/components/pill-list/pill-list.component';
-import { ProjectDetails } from '@app/data-structures/projects';
+import { ResumeProjectItem } from '@app/data-structures/resume';
 
 @Component({
   selector: 'app-project-preview',
@@ -8,5 +8,5 @@ import { ProjectDetails } from '@app/data-structures/projects';
   templateUrl: './project-preview.component.html',
 })
 export class ProjectPreviewComponent {
-  project: InputSignal<ProjectDetails> = input.required<ProjectDetails>();
+  project: InputSignal<ResumeProjectItem> = input.required<ResumeProjectItem>();
 }
