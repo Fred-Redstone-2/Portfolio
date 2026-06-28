@@ -1,29 +1,24 @@
-import { ContactItem, ResumeData } from './resume';
+import { ContactInfo, ContactKeys } from './contact';
+import { ResumeData } from './resume';
 import { TechSkillCategories, TechSkills } from './tech-skills';
 
-export const EMAIL = 'mailto:frederic.mac-conaill@polymtl.ca';
-
-export const GITHUB = 'https://github.com/Fred-Redstone-2';
-
-const LINKED_IN = 'https://www.linkedin.com/in/frédéric-mac-conaill-771182374/';
-
-export const CONTACTS: ContactItem[] = [
-  {
-    type: 'Courriel',
+export const CONTACTS: Record<ContactKeys, ContactInfo> = {
+  [ContactKeys.Email]: {
+    name: 'Courriel',
     display: 'frederic.mac-conaill@polymtl.ca',
-    value: EMAIL,
+    url: 'mailto:frederic.mac-conaill@polymtl.ca',
   },
-  {
-    type: 'GitHub',
+  [ContactKeys.GitHub]: {
+    name: 'GitHub',
     display: 'github.com/Fred-Redstone-2',
-    value: GITHUB,
+    url: 'https://github.com/Fred-Redstone-2',
   },
-  {
-    type: 'LinkedIn',
+  [ContactKeys.LinkedIn]: {
+    name: 'LinkedIn',
     display: 'linkedin.com/in/frédéric-mac-conaill',
-    value: LINKED_IN,
+    url: 'https://www.linkedin.com/in/frédéric-mac-conaill-771182374/',
   },
-];
+};
 
 const TECH_SKILLS: Record<TechSkillCategories, TechSkills[][]> = {
   [TechSkillCategories.ProgLanguages]: [

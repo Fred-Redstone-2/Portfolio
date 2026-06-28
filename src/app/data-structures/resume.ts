@@ -1,11 +1,5 @@
 import { TechSkillCategories, TechSkills } from './tech-skills';
 
-export interface ContactItem {
-  type: string;
-  display: string;
-  value: string;
-}
-
 export interface ResumeEducationItem {
   school: string;
   degree: string;

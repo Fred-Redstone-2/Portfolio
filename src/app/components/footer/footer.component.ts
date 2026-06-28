@@ -1,6 +1,6 @@
 import { Component, computed, Signal } from '@angular/core';
 import { UrlComponent } from '@app/components/url/url.component';
-import { EMAIL, GITHUB } from '@app/data-structures/constants';
+import { CONTACTS } from '@app/data-structures/constants';
 
 @Component({
   selector: 'app-footer',
@@ -8,6 +8,6 @@ import { EMAIL, GITHUB } from '@app/data-structures/constants';
   templateUrl: './footer.component.html',
 })
 export class FooterComponent {
-  protected readonly email: Signal<string> = computed(() => EMAIL);
-  protected readonly gitHub: Signal<string> = computed(() => GITHUB);
+  protected readonly email: Signal<string> = computed(() => CONTACTS.Email.url);
+  protected readonly gitHub: Signal<string> = computed(() => CONTACTS.GitHub.url);
 }
