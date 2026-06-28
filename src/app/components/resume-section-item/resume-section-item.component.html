@@ -1,0 +1,20 @@
+<li class="flex-auto flex flex-col gap-2">
+  <h3 class="text-xl">
+    <strong class="font-bold">
+      {{ itemTitle() }}
+    </strong>
+    <ng-content select="[titleExtra]" />
+  </h3>
+  <ng-content select="[extra]" />
+  <ul class="list-disc marker:text-secondary pl-6 ml-2">
+    @if (itemsArray()) {
+      @for (item of itemsArray(); track item) {
+        <li>
+          {{ item }}
+        </li>
+      }
+    } @else {
+      <ng-content />
+    }
+  </ul>
+</li>

@@ -1,7 +1,9 @@
 import { Component, computed, Signal } from '@angular/core';
 
-import { LinkComponent } from '@app/components/link/link.component';
 import { ResumeSectionComponent } from '@app/components/resume-section/resume-section.component';
+import { ResumeSectionItemComponent } from '@app/components/resume-section-item/resume-section-item.component';
+import { ResumeSectionMdashItemComponent } from '@app/components/resume-section-mdash-item/resume-section-mdash-item.component';
+import { LinkComponent } from '@app/components/link/link.component';
 import { UrlComponent } from '@app/components/url/url.component';
 import { PillListComponent } from '@app/components/pill-list/pill-list.component';
 import { SimpleMarkdownPipe } from '@app/utilities/simple-markdown.pipe';
@@ -13,7 +15,10 @@ import { TechSkills } from '@app/data-structures/tech-skills';
 
 @Component({
   selector: 'app-resume-elements',
-  imports: [LinkComponent, ResumeSectionComponent, UrlComponent, PillListComponent, SimpleMarkdownPipe],
+  imports: [
+    ResumeSectionComponent, ResumeSectionItemComponent, ResumeSectionMdashItemComponent,
+    LinkComponent, UrlComponent, PillListComponent, SimpleMarkdownPipe,
+  ],
   templateUrl: './resume-elements.component.html',
 })
 export class ResumeElementsComponent {

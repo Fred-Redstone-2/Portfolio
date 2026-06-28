@@ -1,0 +1,16 @@
+<div class="flex-auto flex flex-row items-start gap-2">
+  <span class="flex-none font-bold select-none pt-[0.1rem] pl-2">&mdash;</span>
+  <div class="flex-none flex flex-col gap-1">
+    <h3 class="font-bold text-xl">
+      {{ itemTitle() }}
+    </h3>
+    <p>
+      {{ subtitle() }}
+    </p>
+    @if (extra()) {
+      <em class="italic">
+        {{ extra() }}
+      </em>
+    }
+  </div>
+</div>

@@ -56,6 +56,10 @@
   @apply inline-flex items-center text-primary font-bold bg-button-bg rounded-lg pt-3 pb-3 pl-5 pr-5 hover:cursor-pointer transition-transform will-change-transform duration-300 hover:scale-105;
 }
 
+@utility unordered-list {
+  @apply flex-1 flex flex-col gap-6;
+}
+
 @layer base {
   html,
   body {
