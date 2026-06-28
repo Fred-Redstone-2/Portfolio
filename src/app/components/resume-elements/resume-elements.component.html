@@ -3,12 +3,12 @@
 </app-resume-section>
 
 <app-resume-section sectionTitle="Compétences techniques">
-  <ul class="flex-1">
+  <ul class="flex-1 flex flex-col gap-6">
     @for (category of skillsArray(); track category[0]; let i = $index) {
       @let title = category[0];
       @let rows = category[1];
 
-      <li [class]="{ 'pb-6': i !== skillsArray().length - 1 }">
+      <li class="flex-auto">
         <h3 class="font-bold text-xl pb-2">
           {{ title }}
         </h3>
@@ -30,12 +30,9 @@
 </app-resume-section>
 
 <app-resume-section sectionTitle="Formation">
-  <ul class="flex-1">
-    @for (item of resume().education; track item.degree; let i = $index) {
-      <li
-        class="flex flex-row items-start gap-2"
-        [class]="{ 'pb-6': i !== resume().education.length - 1 }"
-      >
+  <ul class="flex-1 flex flex-col gap-6">
+    @for (item of resume().education; track item.degree) {
+      <li class="flex-auto flex flex-row items-start gap-2">
         <span class="flex-none font-bold select-none pt-[0.1rem] pl-2">&mdash;</span>
         <div class="flex-none flex flex-col gap-1">
           <h3 class="font-bold text-xl">
@@ -50,9 +47,9 @@
 </app-resume-section>
 
 <app-resume-section sectionTitle="Expérience">
-  <ul class="flex-1">
-    @for (item of resume().experience; track item.date; let i = $index) {
-      <li class="flex flex-col gap-1" [class]="{ 'pb-6': i !== resume().experience.length - 1 }">
+  <ul class="flex-1 flex flex-col gap-6">
+    @for (item of resume().experience; track item.date) {
+      <li class="flex-auto flex flex-col gap-2">
         <h3 class="font-bold text-xl">
           {{ item.role }}
         </h3>
@@ -69,13 +66,33 @@
   </ul>
 </app-resume-section>
 
+<app-resume-section sectionTitle="Projets">
+  <ul class="flex-1 flex flex-col gap-6">
+    @for (item of resume().projects; track item.title) {
+      <li class="flex-auto flex flex-col gap-2">
+        <h3 class="text-xl">
+          <span>
+            <strong class="font-bold">{{ item.title }}</strong>
+            | {{ item.date }}
+          </span>
+        </h3>
+        <app-pill-list [values]="item.techs" />
+        <ul class="list-disc marker:text-secondary pl-6 ml-2">
+          @for (highlight of item.highlights; track highlight) {
+            <li>
+              {{ highlight }}
+            </li>
+          }
+        </ul>
+      </li>
+    }
+  </ul>
+</app-resume-section>
+
 <app-resume-section sectionTitle="Langues">
-  <ul class="flex-1">
+  <ul class="flex-1 flex flex-col gap-6">
     @for (language of resume().languages; track language.name; let i = $index) {
-      <li
-        class="flex flex-row items-start gap-2"
-        [class]="{ 'pb-6': i !== resume().languages.length - 1 }"
-      >
+      <li class="flex-auto flex flex-row items-start gap-2">
         <span class="flex-none font-bold select-none pt-[0.1rem] pl-2">&mdash;</span>
         <div class="flex-none">
           <h3 class="font-bold text-xl">{{ language.name }}</h3>
@@ -89,7 +106,7 @@
 <app-resume-section sectionTitle="Contacts">
   <ul class="flex-1 flex flex-col gap-1">
     @for (item of contacts(); track item.display) {
-      <li>
+      <li class="flex-auto">
         <p>
           <span class="text-xl">
             <span class="font-bold">{{ item.type }}</span> :

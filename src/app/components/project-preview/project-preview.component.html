@@ -1,22 +1,21 @@
-<app-link
-  class="h-full flex flex-col items-center card-hover"
-  [value]="project().url"
->
-  <!-- Image -->
-  <img
-    src="{{ project().preview }}"
-    alt="Image de {{ project().title }}"
-    class="flex-none h-50 object-cover rounded-2xl mb-4"
-  />
+<app-link class="h-full flex flex-col items-center card-hover" [value]="project().url">
+  <div class="flex flex-col gap-4">
+    <!-- Image -->
+    <img
+      src="{{ project().preview }}"
+      alt="Image de {{ project().title }}"
+      class="flex-none h-50 object-cover rounded-2xl"
+    />
 
-  <!-- Contenu -->
-  <div class="flex-none">
-    <h1 class="text-2xl text-section-title font-bold">
-      {{ project().title }}
-    </h1>
-    <p class="mt-3 text-base text-secondary leading-relaxed">{{ project().description }}.</p>
+    <!-- Contenu -->
+    <div class="flex-none">
+      <h1 class="text-2xl text-section-title font-bold">
+        {{ project().title }}
+      </h1>
+      <p class="mt-2 text-base text-secondary leading-relaxed">{{ project().description }}.</p>
+    </div>
+
+    <!-- Technologies -->
+    <app-pill-list class="flex-none self-baseline" [values]="project().techs" />
   </div>
-
-  <!-- Technologies -->
-  <app-pill-list [values]="project().techs" class="flex-none self-baseline" />
 </app-link>
