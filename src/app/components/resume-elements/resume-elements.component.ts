@@ -1,6 +1,7 @@
 import { Component, computed, Signal } from '@angular/core';
 
-import { CvSectionComponent } from '@app/components/cv-section/cv-section.component';
+import { LinkComponent } from '@app/components/link/link.component';
+import { ResumeSectionComponent } from '@app/components/resume-section/resume-section.component';
 import { UrlComponent } from '@app/components/url/url.component';
 import { SimpleMarkdownPipe } from '@app/utilities/simple-markdown.pipe';
 
@@ -10,11 +11,11 @@ import { TechSkills } from '@app/data-structures/tech-skills';
 
 
 @Component({
-  selector: 'app-cv-elements',
-  imports: [CvSectionComponent, UrlComponent, SimpleMarkdownPipe],
-  templateUrl: './cv-elements.component.html',
+  selector: 'app-resume-elements',
+  imports: [LinkComponent, ResumeSectionComponent, UrlComponent, SimpleMarkdownPipe],
+  templateUrl: './resume-elements.component.html',
 })
-export class CvElementsComponent {
+export class ResumeElementsComponent {
   protected readonly resume: Signal<ResumeData> = computed(() => RESUME);
   protected readonly skillsArray: Signal<[string, TechSkills[][]][]> = computed(() => Object.entries(RESUME.techSkills));
 

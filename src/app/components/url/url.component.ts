@@ -1,8 +1,9 @@
 import { Component, input, InputSignal } from '@angular/core';
+import { LinkComponent } from '@app/components/link/link.component';
 
 @Component({
   selector: 'app-url',
-  imports: [],
+  imports: [LinkComponent],
   templateUrl: './url.component.html',
 })
 export class UrlComponent {

@@ -6,5 +6,5 @@ import { Component, input, InputSignal } from '@angular/core';
   templateUrl: './pill-list.component.html',
 })
 export class PillListComponent {
-  values: InputSignal<string[]> = input.required<string[]>();
+  readonly values: InputSignal<string[]> = input.required<string[]>();
 }

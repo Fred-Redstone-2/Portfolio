@@ -1,11 +1,11 @@
-import { bootstrapApplication } from '@angular/platform-browser';
 import { enableProdMode, enableProfiling, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter, Routes, withInMemoryScrolling } from '@angular/router';
 import { environment } from './environments/environment';
 
 import { AppComponent } from '@app/pages/app/app.component';
 import { MainPageComponent } from '@app/pages/main-page/main-page.component';
-import { CvPageComponent } from '@app/pages/cv-page/cv-page.component';
+import { ResumePageComponent } from '@app/pages/resume-page/resume-page.component';
 
 
 if (environment.production) {
@@ -15,7 +15,7 @@ if (environment.production) {
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: MainPageComponent },
-  { path: 'cv', component: CvPageComponent },
+  { path: 'resume', component: ResumePageComponent },
   { path: '**', redirectTo: '/home' },
 ];
 

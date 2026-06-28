@@ -1,8 +1,6 @@
-<a
-  href="{{ project().url }}"
-  target="_blank"
-  rel="noopener noreferrer"
+<app-link
   class="h-full flex flex-col items-center card-hover"
+  [value]="project().url"
 >
   <!-- Image -->
   <img
@@ -21,4 +19,4 @@
 
   <!-- Technologies -->
   <app-pill-list [values]="project().techs" class="flex-none self-baseline" />
-</a>
+</app-link>

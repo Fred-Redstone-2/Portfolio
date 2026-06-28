@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CvPageComponent } from './cv-page.component';
+import { ResumePageComponent } from './resume-page.component';
 
 describe('CvPageComponent', () => {
-  let component: CvPageComponent;
-  let fixture: ComponentFixture<CvPageComponent>;
+  let component: ResumePageComponent;
+  let fixture: ComponentFixture<ResumePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CvPageComponent],
+      imports: [ResumePageComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(CvPageComponent);
+    fixture = TestBed.createComponent(ResumePageComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

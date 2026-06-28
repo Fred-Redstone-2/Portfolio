@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CvSectionComponent } from './cv-section.component';
+import { LinkComponent } from './link.component';
 
-describe('CvSectionComponent', () => {
-  let component: CvSectionComponent;
-  let fixture: ComponentFixture<CvSectionComponent>;
+describe('LinkComponent', () => {
+  let component: LinkComponent;
+  let fixture: ComponentFixture<LinkComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CvSectionComponent],
+      imports: [LinkComponent],
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CvSectionComponent);
+    fixture = TestBed.createComponent(LinkComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
