@@ -4,11 +4,13 @@
     Apprenez-en davantage sur moi, ma formation, mes expériences et mes intérêts.
   </p>
 </div>
-<div
-  class="flex-auto grid gap-8 grid-cols-[repeat(var(--cols),minmax(0,1fr))]"
-  style="--cols: {{ nbColumns() }}"
->
-  @for (project of projectList(); track project.title; let i = $index) {
-    <app-project-preview [project]="project" />
-  }
-</div>
+@if (projectList().length !== 0) {
+  <div
+    class="flex-auto grid gap-8 grid-cols-[repeat(var(--cols),minmax(0,1fr))]"
+    style="--cols: {{ nbColumns() }}"
+  >
+    @for (project of projectList(); track project.title; let i = $index) {
+      <app-project-preview [project]="project" />
+    }
+  </div>
+}

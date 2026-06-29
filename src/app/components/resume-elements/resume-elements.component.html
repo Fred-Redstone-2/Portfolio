@@ -47,7 +47,7 @@
   <ul class="unordered-list">
     @for (item of resume().projects; track item.title) {
       <app-resume-section-item [itemTitle]="item.title" [itemsArray]="item.highlights">
-        <span titleExtra> | {{ item.date }} </span>
+        <span titleExtra> | {{ item.date }}</span>
         <app-pill-list extra [values]="item.techs" />
       </app-resume-section-item>
     }

@@ -1,3 +1,9 @@
-<a href="{{ value() }}" target="_blank" rel="noopener noreferrer">
+<a
+  [attr.href]="value() ? value() : null"
+  [attr.target]="value() ? '_blank' : null"
+  rel="noopener noreferrer"
+  (click)="handleClick($event)"
+  [class]="{ 'cursor-default': !value() }"
+>
   <ng-content />
 </a>

@@ -12,9 +12,15 @@ const MAX_COLUMNS = 3;
   templateUrl: './project-list.component.html',
 })
 export class ProjectListComponent {
-  protected readonly projectList: Signal<ResumeProjectItem[]> = computed(() => RESUME.projects);
-  private readonly listLength: Signal<number> = computed(() => this.projectList().length);
-  protected readonly nbColumns: Signal<number> = computed(() => this.listLength() < MAX_COLUMNS ? this.listLength() : MAX_COLUMNS);
+  protected readonly projectList: Signal<ResumeProjectItem[]> = computed(() =>
+    RESUME.projects.filter((project) => project.preview),
+  );
+  private readonly listLength: Signal<number> = computed(() =>
+    this.projectList().length,
+  );
+  protected readonly nbColumns: Signal<number> = computed(() =>
+    this.listLength() < MAX_COLUMNS ? this.listLength() : MAX_COLUMNS,
+  );
 
   protected shouldBeCentered(projectIndex: number): boolean {
     return this.listLength() % MAX_COLUMNS === 1 && projectIndex === this.listLength() - 1;

@@ -107,7 +107,7 @@ export const RESUME: ResumeData = {
         "Utiliser l'API de modding de Minecraft Forge",
         'Concevoir et implémenter des nouveaux blocs et commandes avec leur logique de jeu',
       ],
-      preview: '',
+      preview: './assets/AvionWars.jpg',
       url: 'https://github.com/Fred-Redstone-2/AvionWars',
     },
     {
