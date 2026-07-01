@@ -6,8 +6,7 @@
 </div>
 @if (projectList().length !== 0) {
   <div
-    class="flex-auto grid gap-8 grid-cols-[repeat(var(--cols),minmax(0,1fr))]"
-    style="--cols: {{ nbColumns() }}"
+    class="flex-auto grid gap-8 grid-cols-[repeat(auto-fit,minmax(21rem,1fr))] max-sm:grid-cols-1"
   >
     @for (project of projectList(); track project.title; let i = $index) {
       <app-project-preview [project]="project" />

@@ -18,9 +18,6 @@ export class ProjectListComponent {
   private readonly listLength: Signal<number> = computed(() =>
     this.projectList().length,
   );
-  protected readonly nbColumns: Signal<number> = computed(() =>
-    this.listLength() < MAX_COLUMNS ? this.listLength() : MAX_COLUMNS,
-  );
 
   protected shouldBeCentered(projectIndex: number): boolean {
     return this.listLength() % MAX_COLUMNS === 1 && projectIndex === this.listLength() - 1;

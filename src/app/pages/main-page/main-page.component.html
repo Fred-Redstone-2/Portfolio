@@ -1,20 +1,20 @@
 <app-page-layout>
   <div top class="flex flex-col items-center text-center">
-    <h1 class="flex-none text-5xl font-black tracking-tight">Frédéric Mac Conaill</h1>
-    <p class="flex-none text-xl opacity-90 mt-4">
-      Un étudiant en génie logiciel à Polytechnique Montréal;
-    </p>
-    <p class="flex-none text-xl opacity-90">
+    <h1 class="flex-none text-5xl font-black tracking-tight max-lg:text-4xl">
+      Frédéric Mac Conaill
+    </h1>
+    <p class="flex-none text-xl opacity-90 mt-4 max-lg:text-base">
+      Un étudiant en génie logiciel à Polytechnique Montréal; <br class="max-sm:hidden" />
       passionné de jeux vidéos, de programmation et de conception de logiciels.
     </p>
     <img
-      class="flex-none h-90 object-scale-down rounded-2xl mt-4"
+      class="flex-none block w-full max-w-75 h-auto rounded-2xl mt-4"
       src="./assets/Photo.jpg"
       alt="Photo"
     />
   </div>
 
-  <div bottom class="flex-1 flex flex-col">
+  <div bottom class="flex-1 flex flex-col w-full">
     <app-project-list class="flex-1 flex flex-col gap-8" />
   </div>
 </app-page-layout>

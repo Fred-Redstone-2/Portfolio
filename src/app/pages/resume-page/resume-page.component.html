@@ -1,7 +1,7 @@
 <app-page-layout>
   <div top class="flex flex-col items-center text-center">
     <img
-      class="flex-none object-scale-down rounded-2xl mb-4 h-70"
+      class="flex-none block w-full max-w-70 h-auto rounded-2xl mb-4"
       src="./assets/Photo.jpg"
       alt="Photo"
     />
@@ -14,12 +14,12 @@
     </p>
   </div>
 
-  <div bottom class="flex-1 flex flex-col">
+  <div bottom class="flex-1 flex flex-col w-full">
     <app-resume-elements class="flex-1 flex flex-col text-secondary gap-8" />
   </div>
 </app-page-layout>
 
-<button class="fixed button mt-5 ml-5" (click)="goBack()">
+<button class="fixed button mt-5 ml-5 max-sm:hidden" (click)="goBack()">
   <span class="me-2">&larr;</span>
   <span class="hover:underline">Retour</span>
 </button>
