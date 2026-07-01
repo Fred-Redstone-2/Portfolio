@@ -10,9 +10,12 @@ describe('ResumeSectionMdashItemComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ResumeSectionMdashItemComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ResumeSectionMdashItemComponent);
+    fixture.componentRef.setInput('itemTitle', '');
+    fixture.componentRef.setInput('subtitle', '');
+    fixture.componentRef.setInput('extra', '');
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

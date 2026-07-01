@@ -10,9 +10,10 @@ describe('PillListComponent', () => {
     await TestBed.configureTestingModule({
       imports: [PillListComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PillListComponent);
+    fixture.componentRef.setInput('values', []);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

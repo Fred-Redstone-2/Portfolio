@@ -13,6 +13,7 @@ describe('CvSectionComponent', () => {
       .compileComponents();
 
     fixture = TestBed.createComponent(ResumeSectionComponent);
+    fixture.componentRef.setInput('sectionTitle', '');
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
