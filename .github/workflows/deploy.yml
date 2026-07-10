@@ -51,12 +51,12 @@ jobs:
         run: npm ci
 
       - name: Build Angular Application
-        run: npx ng build --configuration production --base-href /Test-GHActions/
+        run: npx ng build --configuration production --base-href /Portfolio/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/Test-GHActions/browser # Structure par défaut d'Angular 21 (SSR/CSR)
+          folder: dist/Portfolio/browser # Structure par défaut d'Angular 21 (SSR/CSR)
           branch: gh-pages # La branche où les fichiers compilés seront envoyés
           commit-message: >-
             deploy: Déploiement de
