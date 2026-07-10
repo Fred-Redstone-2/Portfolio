@@ -10,6 +10,7 @@ describe('UrlComponent', () => {
   })
   class MockLinkComponent {
     value = input<string>();
+    replacementText = input<string>();
   }
 
   let component: UrlComponent;

@@ -13,6 +13,7 @@ describe('LinkComponent', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(LinkComponent);
+    fixture.componentRef.setInput('value', '');
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

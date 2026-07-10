@@ -25,6 +25,9 @@
   },
   "css.lint.unknownAtRules": "ignore",
   "tailwindCSS.experimental.configFile": "src/styles.css",
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "editor.quickSuggestions": {
     "strings": true
   },
@@ -38,8 +41,9 @@
   "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
   "cSpell.words": [
     "Conaill",
+    "github",
     "oklch",
     "rgba",
     "tailwindcss"
-  ],
+  ]
 }

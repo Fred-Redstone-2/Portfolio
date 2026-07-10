@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+# Évite que deux déploiements se chevauchent si plusieurs commits sont poussés rapidement
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24' # Version recommandée pour Angular 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+  build-and-deploy:
+    name: Build and Deployment
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24' # Version recommandée pour Angular 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular Application
+        run: npx ng build --configuration production --base-href /Test-GHActions/
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/Test-GHActions/browser # Structure par défaut d'Angular 21 (SSR/CSR)
+          branch: gh-pages # La branche où les fichiers compilés seront envoyés
+          commit-message: >-
+            deploy: Déploiement de
+            ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}
+            (Build #${{ github.run_number }})
