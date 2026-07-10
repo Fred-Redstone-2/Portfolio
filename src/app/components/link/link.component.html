@@ -5,5 +5,9 @@
   (click)="handleClick($event)"
   [class]="{ 'cursor-default': !value() }"
 >
-  <ng-content />
+  @if (replacementText()) {
+    <span>{{ replacementText() }}</span>
+  } @else {
+    <ng-content />
+  }
 </a>
