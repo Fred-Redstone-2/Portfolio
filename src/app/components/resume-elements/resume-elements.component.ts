@@ -24,7 +24,9 @@ import { ContactInfo } from '@app/data-structures/contact';
 })
 export class ResumeElementsComponent {
   protected readonly resume: Signal<ResumeData> = computed(() => RESUME);
-  protected readonly skillsArray: Signal<[string, TechSkills[][]][]> = computed(() => Object.entries(RESUME.techSkills));
+  protected readonly skillsArray: Signal<[string, TechSkills[][]][]> = computed(() =>
+    Object.entries(RESUME.techSkills),
+  );
 
   protected readonly contacts: Signal<ContactInfo[]> = computed(() => Object.values(CONTACTS));
   protected readonly email: Signal<string> = computed(() => CONTACTS.Email.url);

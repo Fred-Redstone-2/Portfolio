@@ -23,9 +23,12 @@ enableProfiling();
 bootstrapApplication(AppComponent, {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes, withInMemoryScrolling({
-      scrollPositionRestoration: 'enabled',
-    })),
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'enabled',
+      }),
+    ),
   ],
 })
   // eslint-disable-next-line no-console

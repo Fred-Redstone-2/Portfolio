@@ -35,5 +35,5 @@ export interface ResumeData {
   education: ResumeEducationItem[];
   experience: ResumeExperienceItem[];
   projects: ResumeProjectItem[];
-  languages: ResumeLanguageItem[]
+  languages: ResumeLanguageItem[];
 }

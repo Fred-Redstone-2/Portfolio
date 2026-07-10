@@ -20,15 +20,15 @@ describe('AppComponent', () => {
       imports: [AppComponent],
       providers: [provideRouter([])],
     })
-    .overrideComponent(AppComponent, {
-      remove: {
-        imports: [FooterComponent],
-      },
-      add: {
-        imports: [MockFooterComponent],
-      },
-    })
-    .compileComponents();
+      .overrideComponent(AppComponent, {
+        remove: {
+          imports: [FooterComponent],
+        },
+        add: {
+          imports: [MockFooterComponent],
+        },
+      })
+      .compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;

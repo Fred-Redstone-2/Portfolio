@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 
 import { MainPageComponent } from './main-page.component';
 
-
 describe('MainPageComponent', () => {
   @Component({
     selector: 'app-page-layout',

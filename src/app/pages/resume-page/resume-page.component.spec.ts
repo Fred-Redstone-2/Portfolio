@@ -21,7 +21,7 @@ describe('CvPageComponent', () => {
   let component: ResumePageComponent;
   let fixture: ComponentFixture<ResumePageComponent>;
   let mockLocationService: {
-    back: Mock<typeof Location.prototype.back>,
+    back: Mock<typeof Location.prototype.back>;
   };
 
   beforeEach(async () => {

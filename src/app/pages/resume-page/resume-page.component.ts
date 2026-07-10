@@ -3,7 +3,6 @@ import { Component, inject } from '@angular/core';
 import { ResumeElementsComponent } from '@app/components/resume-elements/resume-elements.component';
 import { PageLayoutComponent } from '@app/pages/page-layout/page-layout.component';
 
-
 @Component({
   selector: 'app-resume-page',
   imports: [PageLayoutComponent, ResumeElementsComponent],

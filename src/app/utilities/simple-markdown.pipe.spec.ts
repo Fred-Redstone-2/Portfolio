@@ -7,7 +7,7 @@ import { SimpleMarkdownPipe } from './simple-markdown.pipe';
 describe('SimpleMarkdownPipe', () => {
   let pipe: SimpleMarkdownPipe;
   let mockDomSanitizer: {
-    bypassSecurityTrustHtml: Mock<typeof DomSanitizer.prototype.bypassSecurityTrustHtml>
+    bypassSecurityTrustHtml: Mock<typeof DomSanitizer.prototype.bypassSecurityTrustHtml>;
   };
 
   beforeEach(() => {
@@ -22,7 +22,7 @@ describe('SimpleMarkdownPipe', () => {
       ],
     });
 
-    pipe = TestBed.runInInjectionContext(() => new SimpleMarkdownPipe);
+    pipe = TestBed.runInInjectionContext(() => new SimpleMarkdownPipe());
   });
 
   it('create an instance', () => {
