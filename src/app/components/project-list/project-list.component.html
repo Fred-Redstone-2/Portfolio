@@ -1,8 +1,14 @@
-<div class="flex-none card-hover hover:cursor-pointer" routerLink="/resume">
+<div
+  class="flex-none flex flex-col gap-3 relative card-hover hover:cursor-pointer"
+  routerLink="/resume"
+>
   <h1 class="text-2xl text-section-title font-bold">À propos de moi | CV</h1>
-  <p class="mt-3 text-base text-secondary leading-relaxed">
+  <p class="text-base text-secondary leading-relaxed">
     Apprenez-en davantage sur moi, ma formation, mes expériences et mes intérêts.
   </p>
+  <app-project-forward-button
+    class="self-center card-btn-breakpoint:self-auto card-btn-breakpoint:absolute card-btn-breakpoint:top-0 card-btn-breakpoint:right-0 card-btn-breakpoint:mt-4 card-btn-breakpoint:mr-4"
+  />
 </div>
 @if (projectList().length !== 0) {
   <div

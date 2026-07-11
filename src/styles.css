@@ -6,6 +6,8 @@
   /* This overrides Tailwind's default font-sans */
   --font-sans: 'Helvetica', ui-sans-serif, system-ui, sans-serif;
 
+  --breakpoint-card-btn-breakpoint: 31.25rem;
+
   --color-primary: white;
   --color-secondary: #4a5565;
   --color-section-title: black;

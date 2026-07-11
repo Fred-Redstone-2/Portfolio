@@ -14,6 +14,12 @@ describe('ProjectListComponent', () => {
     project = input<ResumeProjectItem>();
   }
 
+  @Component({
+    selector: 'app-project-forward-button',
+    template: '',
+  })
+  class MockProjectForwardButtonComponent {}
+
   let component: ProjectListComponent;
   let fixture: ComponentFixture<ProjectListComponent>;
 
@@ -24,7 +30,7 @@ describe('ProjectListComponent', () => {
     })
       .overrideComponent(ProjectListComponent, {
         set: {
-          imports: [MockProjectPreviewComponent],
+          imports: [MockProjectPreviewComponent, MockProjectForwardButtonComponent],
         },
       })
       .compileComponents();

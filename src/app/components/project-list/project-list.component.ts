@@ -1,6 +1,9 @@
 import { Component, computed, Signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+
 import { ProjectPreviewComponent } from '@app/components/project-preview/project-preview.component';
+import { ProjectForwardButtonComponent } from '@app/components/project-forward-button/project-forward-button.component';
+
 import { RESUME } from '@app/data-structures/constants';
 import { ResumeProjectItem } from '@app/data-structures/resume';
 
@@ -8,7 +11,7 @@ const MAX_COLUMNS = 3;
 
 @Component({
   selector: 'app-project-list',
-  imports: [ProjectPreviewComponent, RouterLink],
+  imports: [ProjectForwardButtonComponent, ProjectPreviewComponent, RouterLink],
   templateUrl: './project-list.component.html',
 })
 export class ProjectListComponent {
