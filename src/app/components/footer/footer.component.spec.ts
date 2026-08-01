@@ -11,6 +11,7 @@ describe('FooterComponent', () => {
   class MockUrlComponent {
     value = input<string>();
     replacementText = input<string>();
+    isBgDark = input<boolean>();
   }
 
   let component: FooterComponent;
