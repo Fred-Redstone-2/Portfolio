@@ -1,13 +1,17 @@
-<a
-  [attr.href]="value() ? value() : null"
-  [attr.target]="value() ? '_blank' : null"
-  rel="noopener noreferrer"
-  (click)="handleClick($event)"
-  [class]="{ 'cursor-default': !value() }"
->
-  @if (replacementText()) {
-    <span>{{ replacementText() }}</span>
-  } @else {
-    <ng-content />
-  }
-</a>
+<ng-template #content>
+  <ng-content />
+</ng-template>
+
+@if (value()) {
+  <a [href]="value()" target="_blank" rel="noopener noreferrer">
+    @if (replacementText()) {
+      <span>{{ replacementText() }}</span>
+    } @else {
+      <ng-container [ngTemplateOutlet]="content" />
+    }
+  </a>
+} @else {
+  <div>
+    <ng-container [ngTemplateOutlet]="content" />
+  </div>
+}
