@@ -12,11 +12,12 @@
   --color-secondary: #4a5565;
   --color-section-title: black;
   --color-pill: #364153;
-  --color-link: #155dfc;
+  --color-link-light: oklch(70.7% 0.165 254.624);
+  --color-link-dark: #155dfc;
   --color-border: #ddd;
 
   --color-card-bg: white;
-  --color-footer-bg: #1d293d;
+  --color-footer-bg: #171717;
   --color-pill-bg: #f3f4f6;
   --color-button-bg: #2c3e50;
 

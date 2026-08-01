@@ -1,5 +1,6 @@
 <app-link
-  class="text-link hover:underline max-sm:underline"
+  class="hover:underline max-sm:underline"
+  [class]="isBgDark() ? 'text-link-light' : 'text-link-dark'"
   [value]="value()"
   [replacementText]="replacementText()"
 />

@@ -9,4 +9,5 @@ import { LinkComponent } from '@app/components/link/link.component';
 export class UrlComponent {
   readonly value: InputSignal<string> = input.required<string>();
   readonly replacementText: InputSignal<string> = input.required<string>();
+  readonly isBgDark: InputSignal<boolean> = input<boolean>(false);
 }

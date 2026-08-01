@@ -93,7 +93,7 @@ export const RESUME: ResumeData = {
         "Collaborer avec d'autres étudiants en équipe de 6 pour accomplir toutes les tâches du projet",
         'Comprendre, modifier et utiliser des pipelines de vérification (CI/CD)',
       ],
-      preview: './assets/SyndSpriteFerme.png',
+      preview: './assets/SyndSpriteFerme.webp',
       url: '',
     },
     {
@@ -107,7 +107,7 @@ export const RESUME: ResumeData = {
         "Utiliser l'API de modding de Minecraft Forge",
         'Concevoir et implémenter des nouveaux blocs et commandes avec leur logique de jeu',
       ],
-      preview: './assets/AvionWars.jpg',
+      preview: './assets/AvionWars.webp',
       url: 'https://github.com/Fred-Redstone-2/AvionWars',
     },
     {
@@ -121,7 +121,7 @@ export const RESUME: ResumeData = {
         "Peaufiner l'interface utilisateur pour qu'elle soit attrayante",
         'Travailler en équipe pour bien se séparer les tâches et interagir entre équipiers pour garder une bonne ambiance de travail',
       ],
-      preview: './assets/SmartSounds.png',
+      preview: './assets/SmartSounds.webp',
       url: 'https://github.com/Fred-Redstone-2/SmartSounds',
     },
   ],

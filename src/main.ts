@@ -1,6 +1,6 @@
 import { enableProdMode, enableProfiling, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter, Routes, withInMemoryScrolling } from '@angular/router';
+import { provideRouter, Routes, withHashLocation, withInMemoryScrolling } from '@angular/router';
 import { environment } from './environments/environment';
 
 import { AppComponent } from '@app/pages/app/app.component';
@@ -25,6 +25,7 @@ bootstrapApplication(AppComponent, {
     provideBrowserGlobalErrorListeners(),
     provideRouter(
       routes,
+      withHashLocation(),
       withInMemoryScrolling({
         scrollPositionRestoration: 'enabled',
       }),
