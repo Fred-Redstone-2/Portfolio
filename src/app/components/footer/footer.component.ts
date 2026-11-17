@@ -10,4 +10,5 @@ import { CONTACTS } from '@app/data-structures/constants';
 export class FooterComponent {
   protected readonly email: Signal<string> = computed(() => CONTACTS.Email.url);
   protected readonly gitHub: Signal<string> = computed(() => CONTACTS.GitHub.url);
+  protected readonly linkedIn: Signal<string> = computed(() => CONTACTS.LinkedIn.url);
 }
